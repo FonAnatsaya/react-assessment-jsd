@@ -2,10 +2,12 @@ import { useState } from "react";
 import Navbar from "./Navbar";
 import User from "./User";
 import Admin from "./Admin";
+import { Services } from "./Services";
 
 const Home = () => {
   const [text, setText] = useState("React-Assessment");
-
+  const { get, create, remove } = Services();
+  const employees = get();
   const handleButton = (type) => {
     if (type) {
       setText("Home-User Sector");
@@ -26,7 +28,11 @@ const Home = () => {
           <button onClick={() => handleButton(true)}>User Home Sector</button>
           <button onClick={() => handleButton(false)}>Admin Home Sector</button>
         </div>
-        {text === "Home-User Sector" ? <User /> : <Admin />}
+        {text === "Home-User Sector" ? (
+          <User employees={employees} />
+        ) : (
+          <Admin />
+        )}
       </div>
     </div>
   );

@@ -45,7 +45,7 @@ export const Services = () => {
 
   const remove = (id) => {
     const updateEmployees = employees.filter((emp) => emp.id !== id);
-    setUsers(updateEmployees);
+    setEmployees(updateEmployees);
   };
 
   return { get, create, remove };
