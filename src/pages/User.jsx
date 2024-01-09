@@ -1,7 +1,7 @@
-const Admin = () => {
+const User = ({ employees }) => {
   return (
     <div className="table">
-      {/* <table>
+      <table>
         <thead>
           <tr>
             <th>Name</th>
@@ -20,8 +20,8 @@ const Admin = () => {
             );
           })}
         </tbody>
-      </table> */}
+      </table>
     </div>
   );
 };
-export default Admin;
+export default User;

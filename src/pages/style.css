@@ -19,14 +19,7 @@
 .navBar a {
   text-decoration: none;
 }
-.Layout h1 {
-  text-align: center;
-  height: 20vh;
-  margin: 40px;
-}
-.Layout {
-  text-align: center;
-}
+
 .Layout button {
   margin: 0px 56px;
   width: 150px;
@@ -34,4 +27,20 @@
   border: none;
   background-color: white;
   font-weight: 700;
+}
+
+table,
+td,
+th {
+  border: 1px solid;
+  border-radius: 0%;
+}
+table {
+  border-collapse: collapse;
+  width: 600px;
+}
+.table {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
 }
