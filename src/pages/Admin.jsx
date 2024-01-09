@@ -1,10 +1,15 @@
 import { useState } from "react";
 
-const Admin = ({ employees }) => {
+const Admin = ({ employees, handleSave, remove }) => {
   const [form, setForm] = useState({ name: "", lastname: "", position: "" });
   const handleChange = (evt) => {
     setForm((prev) => ({ ...prev, [evt.target.name]: evt.target.value }));
   };
+  const onSaveButton = () => {
+    handleSave(form);
+    setForm({ name: "", lastname: "", position: "" });
+  };
+
   return (
     <div>
       <div className="input-section">
@@ -27,7 +32,7 @@ const Admin = ({ employees }) => {
           placeholder="Position"
           onChange={handleChange}
         ></input>
-        <button>Save</button>
+        <button onClick={onSaveButton}>Save</button>
       </div>
       <div className="table">
         <table>
@@ -42,12 +47,15 @@ const Admin = ({ employees }) => {
           <tbody>
             {employees.map((emp) => {
               return (
-                <tr>
+                <tr key={emp.id}>
                   <td>{emp.name}</td>
                   <td>{emp.lastname}</td>
                   <td>{emp.position}</td>
                   <td>
-                    <button style={{ backgroundColor: "lightgrey" }}>
+                    <button
+                      style={{ backgroundColor: "lightgrey" }}
+                      onClick={() => remove(emp.id)}
+                    >
                       Delete
                     </button>
                   </td>
