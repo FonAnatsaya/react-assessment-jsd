@@ -1,12 +1,12 @@
 import { useState } from "react";
 
-const Admin = ({ employees, handleSave, remove }) => {
+const Admin = ({ employees, handleCreate, handleRemove }) => {
   const [form, setForm] = useState({ name: "", lastname: "", position: "" });
   const handleChange = (evt) => {
     setForm((prev) => ({ ...prev, [evt.target.name]: evt.target.value }));
   };
   const onSaveButton = () => {
-    handleSave(form);
+    handleCreate(form);
     setForm({ name: "", lastname: "", position: "" });
   };
 
@@ -54,7 +54,7 @@ const Admin = ({ employees, handleSave, remove }) => {
                   <td>
                     <button
                       style={{ backgroundColor: "lightgrey" }}
-                      onClick={() => remove(emp.id)}
+                      onClick={() => handleRemove(emp.id)}
                     >
                       Delete
                     </button>
