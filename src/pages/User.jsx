@@ -3,11 +3,11 @@ const User = ({ employees }) => {
     <div className="table">
       <table>
         <thead>
-          <tr>
+          {/* <tr>
             <th>Name</th>
             <th>Lastname</th>
             <th>Position</th>
-          </tr>
+          </tr> */}
         </thead>
         <tbody>
           {employees.map((emp) => {

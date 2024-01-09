@@ -44,3 +44,19 @@ table {
   justify-content: center;
   margin-top: 60px;
 }
+.input-section button {
+  width: 50px;
+  height: 28px;
+  margin-left: 16px;
+}
+
+.input-section input {
+  height: 28px;
+  margin: 10px;
+  width: 200px;
+}
+.input-section h4 {
+  text-align: left;
+  margin-left: 300px;
+  padding-top: 40px;
+}

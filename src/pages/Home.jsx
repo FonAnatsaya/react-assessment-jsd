@@ -31,7 +31,7 @@ const Home = () => {
         {text === "Home-User Sector" ? (
           <User employees={employees} />
         ) : (
-          <Admin />
+          <Admin employees={employees} create={create} remove={remove} />
         )}
       </div>
     </div>
